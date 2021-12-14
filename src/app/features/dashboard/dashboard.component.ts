@@ -51,6 +51,7 @@ export class DashboardComponent implements OnInit {
       filter: true,
       resizable: true,
       floatingFilter:true,
+      rowSelection: 'single',
       // editable:true
 
     };
