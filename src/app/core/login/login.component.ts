@@ -17,22 +17,22 @@ export class LoginComponent implements OnInit {
     ?.subscribe((result: any) => {
       console.log(result)
     });
+      
+  const signUpButton :any= document.getElementById('signUp');
+  const signInButton:any = document.getElementById('signIn');
+  const container:any = document.getElementById('container');
+  const h2:any = document.getElementById('h2');
 
-const signUpButton :any= document.getElementById('signUp');
-const signInButton:any = document.getElementById('signIn');
-const container:any = document.getElementById('container');
-const h2:any = document.getElementById('h2');
+  signUpButton.addEventListener('click', () => {
+    container.classList.add("right-panel-active");
+    h2.innerHTML = "PLEASE SIGNUP"
+  });
 
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-  h2.innerHTML = "PLEASE SIGNUP"
-});
+  signInButton.addEventListener('click', () => {
+    container.classList.remove("right-panel-active");
+    h2.innerHTML = "PLEASE SIGNIN"
 
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-  h2.innerHTML = "PLEASE SIGNIN"
-
-});
+  });
 
   }
  

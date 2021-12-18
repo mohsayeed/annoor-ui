@@ -18,7 +18,7 @@ const components=[
   SidebarComponent,
   LayoutComponent,
   ToastsContainer,
-  LoginComponent
+  LoginComponent,
 ]
 
 @NgModule({
