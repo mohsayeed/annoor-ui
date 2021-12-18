@@ -20,23 +20,23 @@ export class DashboardComponent implements OnInit {
   searchValue:any;
   rowData!: any[];
   columnDefs: ColDef[] = [
-    { field: 'bankAccountNumber', sortable: true, filter: true },
-    { field: 'branchName', sortable: true, filter: true },
-    { field: 'childAadhaar', sortable: true, filter: true },
+    //{ field: 'bankAccountNumber', sortable: true, filter: true },
+    //{ field: 'branchName', sortable: true, filter: true },
+    //{ field: 'childAadhaar', sortable: true, filter: true },
     { field: 'childGovtId', sortable: true, filter: true },
     { field: 'class', sortable: true, filter: true },
-    { field: 'createdDate', sortable: true, filter: true },
-    { field: 'fatherAadhaar', sortable: true, filter: true },
+    //{ field: 'createdDate', sortable: true, filter: true },
+    // { field: 'fatherAadhaar', sortable: true, filter: true },
     { field: 'fatherContactNumber', sortable: true, filter: true },
     { field: 'fatherName', sortable: true, filter: true },
-    { field: 'id', sortable: true, filter: true },
-    { field: 'ifscCode', sortable: true, filter: true },
-    { field: 'isActive', sortable: true, filter: true },
-    { field: 'modifiedDate', sortable: true, filter: true },
-    { field: 'motherAadhaar', sortable: true, filter: true },
-    { field: 'motherContact', sortable: true, filter: true },
-    { field: 'motherName', sortable: true, filter: true },
-    { field: 'rationCardNumber', sortable: true, filter: true },
+    //{ field: 'id', sortable: true, filter: true },
+    //{ field: 'ifscCode', sortable: true, filter: true },
+    //{ field: 'isActive', sortable: true, filter: true },
+    //{ field: 'modifiedDate', sortable: true, filter: true },
+    //{ field: 'motherAadhaar', sortable: true, filter: true },
+    //{ field: 'motherContact', sortable: true, filter: true },
+    //{ field: 'motherName', sortable: true, filter: true },
+    //{ field: 'rationCardNumber', sortable: true, filter: true },
     { field: 'rollNumber', sortable: true, filter: true },
     { field: 'studentName', sortable: true, filter: true },
   ];
@@ -51,9 +51,7 @@ export class DashboardComponent implements OnInit {
       filter: true,
       resizable: true,
       floatingFilter:true,
-      rowSelection: 'single',
-      // editable:true
-
+      rowSelection: 'single'
     };
     this.domLayout = 'autoHeight';
     this.popupParent = document.body;
@@ -71,7 +69,6 @@ export class DashboardComponent implements OnInit {
     ?.subscribe((result: any) => {
       this.rowData = (result)
       params.api.setRowData(result)
-      console.log(this.rowData)
     }); 
   }
 

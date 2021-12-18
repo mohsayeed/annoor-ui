@@ -1,9 +1,14 @@
 <h1>Dashboard</h1>
-<div class="flex-fill align-self-center">
+<!-- <div class="flex-fill align-self-center">
     <h4>Students Info</h4>
+</div> -->
+<div class="row justify-content-between">
+  <div class="col-2">
+    <input type="text" placeholder="filter" (keyup)="quickSearch()" [(ngModel)]= "searchValue">   </div>
+  <div class="col-2">
+    <button (click)="onBtnExport()">Download CSV export file</button>
+  </div>
 </div>
-<input type="text" placeholder="filter" (keyup)="quickSearch()" [(ngModel)]= "searchValue"> 
-<button (click)="onBtnExport()">Download CSV export file</button>
 
 <div class="table-responsive">
   <table class="table" #TABLE>
@@ -14,6 +19,7 @@
     [columnDefs]="columnDefs"
     [defaultColDef]="defaultColDef"
     [rowData]="rowData"
+    [enableCellTextSelection]="true"
     [enableRangeSelection]="true"
     [domLayout]="domLayout"
     [animateRows]="true"

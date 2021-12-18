@@ -14,4 +14,10 @@ export class DashboardService {
       AuthEndPoints.ALL_STUDENTS
       );
   }
+  test() {
+    return this.httpService.requestCall(
+      ApiMethod.GET,
+      AuthEndPoints.TEST
+      );
+  }
 }
