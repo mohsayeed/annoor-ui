@@ -10,6 +10,7 @@ import { CommonValidators } from 'src/app/core/validators/common.validators';
 export class AddStudentComponent implements OnInit {
 
   addStudentForm!: FormGroup;
+  submitted!: boolean;
 
   constructor(private formBuilder: FormBuilder,
              ) { }
@@ -18,6 +19,9 @@ export class AddStudentComponent implements OnInit {
     this.buildForm()
   }
 
+  get formAddstudent() {
+    return this.addStudentForm.controls;
+  }
   buildForm(){
     this.addStudentForm = this.formBuilder.group({
       studentName: ['',[Validators.required]],
@@ -39,7 +43,7 @@ export class AddStudentComponent implements OnInit {
     });
   }
   save(){
-
+    this.submitted = true;
   }
   cancel(){
     

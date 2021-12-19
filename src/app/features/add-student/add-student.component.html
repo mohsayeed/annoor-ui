@@ -1,18 +1,85 @@
 <div class="p-3 card wrapper">
     <h3 class="page-title me-auto">Add Student</h3>
-    <h3 class="page-title me-auto">Edit Student</h3>
+    <!-- <h3 class="page-title me-auto">Edit Student</h3> -->
+    <h6>Student Information</h6>
 
     <form [formGroup]="addStudentForm" class="row col-10 g-4">
-        <h6>Student Information</h6>
+        <div class="row g-3 mb-3">
+            <div class="col-md-6">
+                <label for="studentName" class="form-label">
+                  Student Name<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="studentName" placement="bottom" formControlName="studentName"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.studentName.errors }"/>
 
-        <div class="col-md-12 text-end">
-            <button class="btn btn-secondary" type="button" (click)="cancel()">
-                Cancel
-            </button>
+                <div *ngIf="submitted && formAddstudent.studentName.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.studentName.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="studentClass" class="form-label">
+                  Student Class<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="studentClass" placement="bottom" formControlName="studentClass"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.studentClass.errors }"/>
 
-            <button class="btn btn-primary ms-2" type="submit" (click)="save()" [disabled]="!addStudentForm.dirty">
-                Save
-            </button>
+                <div *ngIf="submitted && formAddstudent.studentClass.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.studentClass.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="studentSection" class="form-label">
+                  Student Section<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="studentSection" placement="bottom" formControlName="studentSection"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.studentSection.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.studentSection.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.studentSection.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="studentRollNumber" class="form-label">
+                  Student Roll Number<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="studentRollNumber" placement="bottom" formControlName="studentRollNumber"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.studentRollNumber.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.studentRollNumber.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.studentRollNumber.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="studentGovtId" class="form-label">
+                  Student Govt. ID<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="studentGovtId" placement="bottom" formControlName="studentGovtId"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.studentGovtId.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.studentGovtId.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.studentGovtId.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="studentAadhaar" class="form-label">
+                  Student Aadhaar<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="studentAadhaar" placement="bottom" formControlName="studentAadhaar"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.studentAadhaar.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.studentAadhaar.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.studentAadhaar.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-12 text-end">
+                <button class="btn btn-secondary" type="button" (click)="cancel()">
+                    Cancel
+                </button>
+
+                <button class="btn btn-primary ms-2" type="submit" (click)="save()" [disabled]="!addStudentForm.dirty">
+                    Save
+                </button>
+            </div>
         </div>
     </form>
 </div>
