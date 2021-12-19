@@ -1,9 +1,9 @@
 <div class="p-3 card wrapper">
     <h3 class="page-title me-auto">Add Student</h3>
     <!-- <h3 class="page-title me-auto">Edit Student</h3> -->
-    <h6>Student Information</h6>
 
     <form [formGroup]="addStudentForm" class="row col-10 g-4">
+        <h6>Student Information</h6>
         <div class="row g-3 mb-3">
             <div class="col-md-6">
                 <label for="studentName" class="form-label">
@@ -69,6 +69,118 @@
 
                 <div *ngIf="submitted && formAddstudent.studentAadhaar.errors" class="error-feedback">
                     <div *ngIf="formAddstudent.studentAadhaar.errors.required">Field is required</div>
+                </div>
+            </div>
+            <h6>Parents Information</h6>
+            <div class="col-md-6">
+                <label for="fatherName" class="form-label">
+                  Father Name<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="fatherName" placement="bottom" formControlName="fatherName"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.fatherName.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.fatherName.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.fatherName.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="motherName" class="form-label">
+                  Mother Name<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="motherName" placement="bottom" formControlName="motherName"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.motherName.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.motherName.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.motherName.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="fatherContactNumber" class="form-label">
+                  Father Phone Number<span class="text-danger">*</span>
+                </label>
+                <input type="number" class="form-control" id="fatherContactNumber" placement="bottom" formControlName="fatherContactNumber"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.fatherContactNumber.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.fatherContactNumber.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.fatherContactNumber.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="motherContactNumber" class="form-label">
+                  Mother Phone Number<span class="text-danger">*</span>
+                </label>
+                <input type="int" class="form-control" id="motherContactNumber" placement="bottom" formControlName="motherContactNumber"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.motherContactNumber.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.motherContactNumber.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.motherContactNumber.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="rationCardNumber" class="form-label">
+                  Ration Card Number<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="rationCardNumber" placement="bottom" formControlName="rationCardNumber"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.rationCardNumber.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.rationCardNumber.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.rationCardNumber.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="fatherAadhaar" class="form-label">
+                  Father Aadhaar<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="fatherAadhaar" placement="bottom" formControlName="fatherAadhaar"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.fatherAadhaar.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.fatherAadhaar.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.fatherAadhaar.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="motherAadhaar" class="form-label">
+                  Mother Aadhaar<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="motherAadhaar" placement="bottom" formControlName="motherAadhaar"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.motherAadhaar.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.motherAadhaar.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.motherAadhaar.errors.required">Field is required</div>
+                </div>
+            </div>
+            <h6>Bank Details</h6>
+            <div class="col-md-6">
+                <label for="accountNumber" class="form-label">
+                Account Number<span class="text-danger">*</span>
+                </label>
+                <input type="number" class="form-control" id="accountNumber" placement="bottom" formControlName="accountNumber"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.accountNumber.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.accountNumber.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.accountNumber.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="ifscCode" class="form-label">
+                IFSC Code<span class="text-danger">*</span>
+                </label>
+                <input type="text" class="form-control" id="ifscCode" placement="bottom" formControlName="ifscCode"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.ifscCode.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.ifscCode.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.ifscCode.errors.required">Field is required</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="branchName" class="form-label">
+                Branch Name<span class="text-danger">*</span>
+                </label>
+                <input type="int" class="form-control" id="branchName" placement="bottom" formControlName="branchName"
+                    [ngClass]="{ 'is-invalid': submitted && formAddstudent.branchName.errors }"/>
+
+                <div *ngIf="submitted && formAddstudent.branchName.errors" class="error-feedback">
+                    <div *ngIf="formAddstudent.branchName.errors.required">Field is required</div>
                 </div>
             </div>
             <div class="col-md-12 text-end">
