@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { BootstrapModule } from '../core/module/bootstrap.module';
 import { SharedModule } from '../shared/shared.module';
 import { AgGridModule } from 'ag-grid-angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddStudentComponent } from './add-student/add-student.component';
 
 const components=[
@@ -16,7 +16,7 @@ const components=[
   ReportsComponent,
   StudentsPaymentsComponent,
   TeachersInfoComponent,
-  AddStudentComponent
+  AddStudentComponent,
 ]
 
 @NgModule({
@@ -27,7 +27,8 @@ const components=[
     BootstrapModule,
     SharedModule,
     AgGridModule.withComponents([]),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:components
 })

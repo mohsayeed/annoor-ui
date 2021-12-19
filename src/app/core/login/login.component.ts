@@ -9,7 +9,9 @@ import { DashboardService } from 'src/app/features/dashboard/dashboard.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private dashboardService:DashboardService) { }
+  constructor(private dashboardService:DashboardService,
+              private router: Router,
+              ) { }
 
   ngOnInit(): void {
     this.dashboardService
@@ -34,6 +36,9 @@ export class LoginComponent implements OnInit {
 
   });
 
+  }
+  navigateTodashboard(){
+    this.router.navigate(['/dashboard']);
   }
  
 

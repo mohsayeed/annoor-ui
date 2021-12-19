@@ -2,47 +2,53 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './core/layout/layout.component';
 import { LoginComponent } from './core/login/login.component';
+import { AddStudentComponent } from './features/add-student/add-student.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { ReportsComponent } from './features/reports/reports.component';
 import { StudentsPaymentsComponent } from './features/students-payments/students-payments.component';
 import { TeachersInfoComponent } from './features/teachers-info/teachers-info.component';
 
-const routes:Routes=[
+const routes: Routes = [
   {
-      path: '',
-      redirectTo: '/login',
-      pathMatch: 'full',
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
   },
   {
-      path: 'login',
-      component: LoginComponent,
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: '',
     component: LayoutComponent,
     children: [
-    {      
-      path:'dashboard',
-      component:DashboardComponent,
-    },
-    {
-      path:'reports',
-      component:ReportsComponent
-    },
-    {
-      path:'students-payment',
-      component:StudentsPaymentsComponent
-    },
-    {
-      path:'teachers-info',
-      component:TeachersInfoComponent
-    }
-  ]
-  }
-]
+      {
+        path:'addstudent',
+        component:AddStudentComponent
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+      {
+        path: 'reports',
+        component: ReportsComponent,
+      },
+      {
+        path: 'students-payment',
+        component: StudentsPaymentsComponent,
+      },
+      {
+        path: 'teachers-info',
+        component: TeachersInfoComponent,
+      }
+    ]
+  },
+  { path: '**', redirectTo: '/' }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{ useHash: true})],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

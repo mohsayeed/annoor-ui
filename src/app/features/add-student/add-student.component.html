@@ -1,1 +1,18 @@
-<p>add-student works!</p>
+<div class="p-3 card wrapper">
+    <h3 class="page-title me-auto">Add Student</h3>
+    <h3 class="page-title me-auto">Edit Student</h3>
+
+    <form [formGroup]="addStudentForm" class="row col-10 g-4">
+        <h6>Student Information</h6>
+
+        <div class="col-md-12 text-end">
+            <button class="btn btn-secondary" type="button" (click)="cancel()">
+                Cancel
+            </button>
+
+            <button class="btn btn-primary ms-2" type="submit" (click)="save()" [disabled]="!addStudentForm.dirty">
+                Save
+            </button>
+        </div>
+    </form>
+</div>
