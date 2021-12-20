@@ -6,10 +6,10 @@ const decimal14to2Regex = /^(\d{1,14}|\d{1,14}\.\d{1,2})$/;
 const decimal7to2Regex = /^(\d{1,7}|\d{1,7}\.\d{1,2})$/;
 const nameFormatRegex = /^([0-9a-zA-Z \-,'&\.]*)$/;
 const onlyIntegerRegex = /^[0-9]*$/;
-const fiscalMMMYYRegex = new RegExp("^((JAN|FEB|MAR|APR|MAY|JUN|JULY|AUG|SEP|OCT|NOV|DEC)-(0[0-9]{1}|1[0-9]{1}|2[0-9]{1}))$", 'i');
-const dateMMDDYYYYRegex =new RegExp("^((0[1-9]|[1-9]|1[012])[- /.]([1-9]|0[1-9]|[12][0-9]|3[01])[- /.]((19|20)[0-9]{2}))*$",'i');
+const phoneNumberRegex = /^((\\+91-?)|0)?[0-9]{10}$/;
+const accountNumberRegex = /^\d{9,18}$/;
+const aadhaarRegex = /^[0-9]{12}$/;
 const emailRegex =new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$");
-
 export class CommonValidators {
 
   // Validate Complete Form Group
@@ -87,40 +87,46 @@ export class CommonValidators {
     }
   }
 
-  static fiscalYearMonthValidator(control: FormControl) {
-    const value = control.value;
-    /* Safe-side-check for null or undefined */
-    if (!_.isNil(value) && fiscalMMMYYRegex.test(value) !== true) {
-      return {
-        fiscalYearMonthValidator: 'Fiscal Year Format should be in MMM-YY',
-      };
-    } else {
-      return null;
-    }
-  }
-
-  static datePickerValidator(control: FormControl) {
-    const value = control.value;
-     if (!_.isNil(value)) {
-      /* Safe-side-check for null or undefined */
-      if (dateMMDDYYYYRegex.test(value) !== true) {
-        return {
-          datePickerValidator: 'Date Format should be in MM-DD-YYYY',
-        };
-      } else {
-        return null;
-      }
-    } else {
-      return null;
-    }
-  }
-
   static emailValidator(control: FormControl) {
     const value = control.value;
     /* Safe-side-check for null or undefined */
     if (!_.isNil(value) && emailRegex.test(value) !== true) {
       return {
         emailValidator: 'Email Format should be XYZ@domain_name.extension',
+      };
+    } else {
+      return null;
+    }
+  }
+
+  static phoneNumberValidator(control: FormControl) {
+    const value = control.value;
+    /* Safe-side-check for null or undefined */
+    if (!_.isNil(value) && phoneNumberRegex.test(value) !== true) {
+      return {
+        phoneNumberValidator: 'Please Enter 10 digit Number',
+      };
+    } else {
+      return null;
+    }
+  }
+  static accountNumberValidator(control: FormControl) {
+    const value = control.value;
+    /* Safe-side-check for null or undefined */
+    if (!_.isNil(value) && accountNumberRegex.test(value) !== true) {
+      return {
+        accountNumberValidator: 'Bank Account Number have 9 to 18 digits',
+      };
+    } else {
+      return null;
+    }
+  }
+  static aadhaarNumberValidator(control: FormControl) {
+    const value = control.value;
+    /* Safe-side-check for null or undefined */
+    if (!_.isNil(value) && aadhaarRegex.test(value) !== true) {
+      return {
+        aadhaarNumberValidator: 'Please Enter a 12 digit Number',
       };
     } else {
       return null;

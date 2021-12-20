@@ -69,6 +69,8 @@
 
                 <div *ngIf="submitted && formAddstudent.studentAadhaar.errors" class="error-feedback">
                     <div *ngIf="formAddstudent.studentAadhaar.errors.required">Field is required</div>
+                    <div *ngIf="formAddstudent.studentAadhaar.errors.aadhaarNumberValidator">
+                        {{formAddstudent.studentAadhaar.errors.aadhaarNumberValidator}}</div>
                 </div>
             </div>
             <h6>Parents Information</h6>
@@ -103,6 +105,8 @@
 
                 <div *ngIf="submitted && formAddstudent.fatherContactNumber.errors" class="error-feedback">
                     <div *ngIf="formAddstudent.fatherContactNumber.errors.required">Field is required</div>
+                    <div *ngIf="formAddstudent.fatherContactNumber.errors.phoneNumberValidator">
+                        {{formAddstudent.fatherContactNumber.errors.phoneNumberValidator}}</div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -136,6 +140,8 @@
 
                 <div *ngIf="submitted && formAddstudent.fatherAadhaar.errors" class="error-feedback">
                     <div *ngIf="formAddstudent.fatherAadhaar.errors.required">Field is required</div>
+                    <div *ngIf="formAddstudent.fatherAadhaar.errors.aadhaarNumberValidator">
+                        {{formAddstudent.fatherAadhaar.errors.aadhaarNumberValidator}}</div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -147,6 +153,9 @@
 
                 <div *ngIf="submitted && formAddstudent.motherAadhaar.errors" class="error-feedback">
                     <div *ngIf="formAddstudent.motherAadhaar.errors.required">Field is required</div>
+                    <div *ngIf="formAddstudent.motherAadhaar.errors.aadhaarNumberValidator">
+                        {{formAddstudent.motherAadhaar.errors.aadhaarNumberValidator}}</div>
+                    
                 </div>
             </div>
             <h6>Bank Details</h6>
@@ -159,6 +168,8 @@
 
                 <div *ngIf="submitted && formAddstudent.accountNumber.errors" class="error-feedback">
                     <div *ngIf="formAddstudent.accountNumber.errors.required">Field is required</div>
+                    <div *ngIf="formAddstudent.accountNumber.errors.accountNumberValidator">
+                        {{formAddstudent.accountNumber.errors.accountNumberValidator}}</div>
                 </div>
             </div>
             <div class="col-md-6">
